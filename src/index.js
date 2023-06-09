@@ -46,8 +46,9 @@ puppeteer.launch({
           const emojiRegex = /emoji/g;
           const profileImagesRegex = /profile_images/g;
           const cardImagesRegex = /card_img/g;
+          const extTwVideoThumbRegex = /ext_tw_video_thumb/g;
 
-          if (!profileImagesRegex.test(src) && !emojiRegex.test(src) && !cardImagesRegex.test(src)) {
+          if (!profileImagesRegex.test(src) && !emojiRegex.test(src) && !cardImagesRegex.test(src) && !extTwVideoThumbRegex.test(src)) {
             modifiedUrls.push(modifyParamsFromUrl(src, config.format, config.quality));
           }
         });
@@ -72,9 +73,8 @@ puppeteer.launch({
       mergedArray = [];
     } else {
       frequency++;
+      console.log(result);
       mergedArray.push(result);
-      console.log(mergedArray);
     }
-
   }
 });
