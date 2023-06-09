@@ -21,7 +21,17 @@ puppeteer.launch({
 
   let mergedArray = [];
 
-  while (1) {
+  if (frequency === 100) {
+    mergedArray = [].concat(...mergedArray);
+
+    let uniqueArray = [...new Set(mergedArray)];
+    console.log(uniqueArray);
+
+    fs.writeFile(`pic_${(new Date()).toISOString().replace(/[-:.]/g, '_').replace('T', '_').split('.')[0]}.json`, JSON.stringify(uniqueArray), (err) => {
+      if (err) throw err;
+      console.log("JSON data is saved.");
+    });
+  } else {
     await delay(1000);
 
     let result = await page.evaluate(async (config, frequency) => {
@@ -58,23 +68,8 @@ puppeteer.launch({
     }, config, frequency);
 
     console.log(frequency);
-    if (frequency === 100) {
-      mergedArray = [].concat(...mergedArray);
-
-      let uniqueArray = [...new Set(mergedArray)];
-      console.log(uniqueArray);
-
-      fs.writeFile(`pic_${(new Date()).toISOString().replace(/[-:.]/g, '_').replace('T', '_').split('.')[0]}.json`, JSON.stringify(uniqueArray), (err) => {
-        if (err) throw err;
-        console.log("JSON data is saved.");
-      });
-
-      frequency = 0;
-      mergedArray = [];
-    } else {
-      frequency++;
-      console.log(result);
-      mergedArray.push(result);
-    }
+    console.log(result);
+    mergedArray.push(result);
+    frequency++;
   }
 });
