@@ -1,0 +1,22 @@
+{
+  "username": "daddymulk2013",
+  "type": [
+    "media"
+  ],
+  "quality": "original",
+  "format": "png",
+  "saver": {
+    "path": "../test/"
+  },
+  "puppeteer": {
+    "headless": true,
+    "devtools": false,
+    "viewport": {
+      "width": 720,
+      "height": 1200
+    }
+  },
+  "frequency": 200,
+  "scroll": 1200,
+  "load_delay": 1000
+}
