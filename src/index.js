@@ -86,4 +86,6 @@ puppeteer.launch({
       frequency++;
     }
   }
+
+  await browser.close();
 });
