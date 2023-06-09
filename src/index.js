@@ -11,7 +11,8 @@ function delay(time) {
 
 puppeteer.launch({
   headless: config.puppeteer.headless,
-  devtools: config.puppeteer.devtools
+  devtools: config.puppeteer.devtools,
+  args: config.puppeteer.args
 }).then(async browser => {
   const page = await browser.newPage();
   await page.setViewport({ 
