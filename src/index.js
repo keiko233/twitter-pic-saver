@@ -24,6 +24,7 @@ puppeteer.launch({
 
   let mergedArray = [];
 
+  while (true) {
     if (frequency === config.frequency) {
       mergedArray = [].concat(...mergedArray);
   
@@ -34,6 +35,8 @@ puppeteer.launch({
         if (err) throw err;
         console.log("JSON data is saved.");
       });
+
+      break;
     } else {
       await delay(config.load_delay);
   
@@ -75,4 +78,5 @@ puppeteer.launch({
       mergedArray.push(result);
       frequency++;
     }
+  }
 });
