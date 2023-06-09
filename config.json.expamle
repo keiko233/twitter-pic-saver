@@ -1,0 +1,11 @@
+{
+  "username": "daddymulk2013",
+  "type": [
+    "media"
+  ],
+  "quality": "original",
+  "format": "png",
+  "saver": {
+    "path": "../saver/"
+  }
+}

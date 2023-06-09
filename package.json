@@ -1,0 +1,13 @@
+{
+  "name": "twitter-pic-saver",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "app": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "keiko233",
+  "dependencies": {
+    "puppeteer": "^20.5.0"
+  }
+}
