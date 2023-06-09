@@ -45,8 +45,9 @@ puppeteer.launch({
 
           const emojiRegex = /emoji/g;
           const profileImagesRegex = /profile_images/g;
+          const cardImagesRegex = /card_img/g;
 
-          if (!profileImagesRegex.test(src) && !emojiRegex.test(src)) {
+          if (!profileImagesRegex.test(src) && !emojiRegex.test(src) && !cardImagesRegex.test(src)) {
             modifiedUrls.push(modifyParamsFromUrl(src, config.format, config.quality));
           }
         });
@@ -56,7 +57,7 @@ puppeteer.launch({
     }, config, frequency);
 
     console.log(frequency);
-    if (frequency === 9) {
+    if (frequency === 100) {
       mergedArray = [].concat(...mergedArray);
 
       let uniqueArray = [...new Set(mergedArray)];
