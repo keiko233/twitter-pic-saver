@@ -6,15 +6,19 @@
   "quality": "original",
   "format": "png",
   "saver": {
-    "path": "../test/"
+    "path": "../saver/"
   },
   "puppeteer": {
-    "headless": true,
+    "headless": "new",
     "devtools": false,
     "viewport": {
       "width": 720,
       "height": 1200
-    }
+    },
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "frequency": 200,
   "scroll": 1200,
