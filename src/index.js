@@ -65,13 +65,15 @@ puppeteer.launch({
             const cardImagesRegex = /card_img/g;
             const extTwVideoThumbRegex = /ext_tw_video_thumb/g;
             const tweetVideoThumb = /tweet_video_thumb/g;
-  
+            const amplifyVideoThumbRegex = /amplify_video_thumb/g;
+
             if (
               !profileImagesRegex.test(src) && 
               !emojiRegex.test(src) && 
               !cardImagesRegex.test(src) && 
               !extTwVideoThumbRegex.test(src) && 
-              !tweetVideoThumb.test(src)
+              !tweetVideoThumb.test(src) &&
+              !amplifyVideoThumbRegex.test(src)
             ) {
               modifiedUrls.push(modifyParamsFromUrl(src, config.format, config.quality));
             }
