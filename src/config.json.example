@@ -1,0 +1,27 @@
+{
+  "username": "daddymulk2013",
+  "type": [
+    "media"
+  ],
+  "quality": "original",
+  "format": "png",
+  "saver": {
+    "path": "../saver/"
+  },
+  "puppeteer": {
+    "headless": "new",
+    "devtools": false,
+    "viewport": {
+      "width": 720,
+      "height": 1200
+    },
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  },
+  "frequency": 200,
+  "scroll": 1200,
+  "load_delay": 1000,
+  "autosave": true
+}
