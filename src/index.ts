@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import { delay, mergeArray, writeJson } from './utils';
+import { delay, mergeArray, writeJson, forEachDownloadImage } from './utils';
 import * as config from './config.json';
 
 puppeteer.launch({
@@ -24,6 +24,7 @@ puppeteer.launch({
       mergedArray = mergeArray(mergedArray);
       console.log(mergedArray);
       writeJson(mergedArray);
+      if (config.autosave) forEachDownloadImage(mergedArray);
       break;
     } else {
       await delay(config.load_delay);
